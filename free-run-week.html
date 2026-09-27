@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f3eb">
+    <title>Mila's 3-run week planner | Setter Sandbox</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="wordmark" href="index.html"><span class="wordmark-mark" aria-hidden="true">S</span><span>Setter Sandbox</span></a>
+      <a href="index.html">Back to the demo</a>
+    </header>
+    <main class="planner-main">
+      <section class="planner-sheet">
+        <p class="eyebrow">A FREE RESOURCE FROM MILA</p>
+        <h1>Your first<br><em>3-run week.</em></h1>
+        <p class="planner-intro">A gentle way to make room for running in a busy week. Keep every effort conversational, and leave a rest day between runs.</p>
+        <div class="planner-list">
+          <article><span>01</span><div><h2>Easy run</h2><p>20 minutes at a relaxed pace. Finish feeling like you could keep going.</p></div><small>20 MIN</small></article>
+          <article><span>02</span><div><h2>Run and walk</h2><p>Repeat 3 minutes of easy running and 2 minutes of walking, four times.</p></div><small>20 MIN</small></article>
+          <article><span>03</span><div><h2>Long easy outing</h2><p>25 minutes at a comfortable pace. Walking breaks are welcome.</p></div><small>25 MIN</small></article>
+        </div>
+        <p class="planner-note">This fictional sample is for general inspiration, not a training prescription. Adjust to your needs, and seek qualified advice if you have health concerns.</p>
+        <a class="planner-back" href="index.html">Return to the conversation <span aria-hidden="true">↗</span></a>
+      </section>
+    </main>
+    <style>
+      .planner-main { width: min(100% - 64px, 830px); min-height: calc(100vh - 159px); padding: 70px 0; }
+      .planner-sheet { max-width: 690px; margin: 0 auto; }
+      .planner-sheet h1 { margin: 19px 0 14px; font-size: 61px; line-height: 1.02; }
+      .planner-sheet h1 em { color: var(--coral); font-style: normal; }
+      .planner-intro { max-width: 550px; color: var(--ink-soft); font-size: 15px; line-height: 1.7; }
+      .planner-list { margin-top: 34px; border-top: 1px solid var(--line); }
+      .planner-list article { display: grid; grid-template-columns: 38px 1fr auto; align-items: start; gap: 12px; padding: 19px 0; border-bottom: 1px solid var(--line); }
+      .planner-list article > span, .planner-list article > small { color: var(--leaf-dark); font-family: var(--mono); font-size: 10px; }
+      .planner-list h2 { margin: 0; font-size: 16px; }
+      .planner-list p { max-width: 470px; margin: 5px 0 0; color: var(--ink-soft); font-size: 12px; line-height: 1.6; }
+      .planner-note { margin-top: 23px; color: var(--muted); font-size: 10px; line-height: 1.7; }
+      .planner-back { display: inline-flex; align-items: center; gap: 13px; margin-top: 15px; padding: 11px 13px; color: white; background: var(--ink); font-size: 12px; font-weight: 700; text-decoration: none; }
+      .planner-back:hover { background: var(--leaf-dark); }
+      @media (max-width: 700px) { .planner-main { width: min(100% - 36px, 560px); padding: 46px 0; } .planner-sheet h1 { font-size: 49px; } .planner-list article { grid-template-columns: 29px 1fr; } .planner-list article > small { grid-column: 2; } }
+    </style>
+  </body>
+</html>

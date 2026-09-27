@@ -1,0 +1,10 @@
+name = "setter-sandbox"
+pages_build_output_dir = "./dist"
+compatibility_date = "2026-09-27"
+
+[ai]
+binding = "AI"
+
+[[kv_namespaces]]
+binding = "LIMITS"
+id = "f831c280171f42f3a16e1c914182d7ca"

@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f4f3eb">
+    <meta name="description" content="A fictional appointment setter for Mila Rusu, an online running coach. Try the conversation and watch its structured lead view update live.">
+    <title>Setter Sandbox | A running coach's AI setter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="app.js" type="module"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="wordmark" href="#top" aria-label="Setter Sandbox home">
+        <span class="wordmark-mark" aria-hidden="true">S</span>
+        <span>Setter Sandbox</span>
+      </a>
+      <div class="topbar-meta">
+        <span class="live-mark"><span></span> LIVE DEMO</span>
+        <a href="#how-it-works">How it works</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="intro" aria-labelledby="page-title">
+        <div class="intro-copy">
+          <p class="eyebrow">A fictional coach. A real conversation.</p>
+          <h1 id="page-title">Setter<br><span>Sandbox</span></h1>
+          <p class="intro-deck">One good question at a time, from first comment to a call that feels worth taking.</p>
+          <div class="coach-mark">
+            <span class="coach-avatar" aria-hidden="true"><img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&amp;fit=crop&amp;w=96&amp;h=96&amp;q=80" alt=""></span>
+            <span><strong>Mila Rusu</strong><small>Online running coach</small></span>
+            <span class="fictional-label">FICTIONAL CLIENT</span>
+          </div>
+        </div>
+        <figure class="intro-photo">
+          <img src="https://images.unsplash.com/photo-1552674605-db6ffd4facb5?auto=format&amp;fit=crop&amp;w=1500&amp;q=85" alt="Runners moving together on a tree-lined path">
+          <figcaption><span>01 / 12</span><span>THE FIRST HALF MARATHON</span></figcaption>
+        </figure>
+        <span class="intro-index" aria-hidden="true">01</span>
+      </section>
+
+      <section class="demo-section" aria-label="Appointment setter demo">
+        <div class="demo-heading">
+          <div>
+            <p class="eyebrow">TRY THE CONVERSATION</p>
+            <h2>A lead just replied.</h2>
+          </div>
+          <button class="reset-button" id="reset-chat" type="button" title="Start a new conversation">
+            <span aria-hidden="true">↺</span> New chat
+          </button>
+        </div>
+
+        <div class="demo-layout">
+          <section class="chat-panel" aria-label="Chat with Mila's setter">
+            <header class="chat-header">
+              <div class="chat-coach-avatar" aria-hidden="true"><img src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&amp;fit=crop&amp;w=96&amp;h=96&amp;q=80" alt=""></div>
+              <div class="chat-person">
+                <strong>Mila's team</strong>
+                <span><i></i> Here now</span>
+              </div>
+              <span class="post-reference">RE: THE BUSY-WEEK RUNNING POST</span>
+            </header>
+            <div class="chat-log" id="chat-log" role="log" aria-live="polite" aria-relevant="additions" aria-label="Conversation">
+              <div class="typing-indicator" id="typing-indicator" aria-label="Mila is writing" hidden>
+                <span></span><span></span><span></span>
+              </div>
+            </div>
+            <div class="quick-prompts" id="quick-prompts" aria-label="Try a conversation">
+              <button type="button" data-prompt="ideal">Strong fit</button>
+              <button type="button" data-prompt="price">Price question</button>
+              <button type="button" data-prompt="not-ready">Not ready</button>
+              <button type="button" data-prompt="off-topic">Off topic</button>
+              <button type="button" data-prompt="rule-test">Rule test</button>
+            </div>
+            <form class="composer" id="chat-form">
+              <label class="visually-hidden" for="message-input">Your message</label>
+              <textarea id="message-input" name="message" rows="1" maxlength="500" placeholder="Write a reply..." autocomplete="off" required></textarea>
+              <div class="composer-footer">
+                <span id="message-count">0 / 500</span>
+                <button class="send-button" id="send-button" type="submit">
+                  <span>Send</span><span aria-hidden="true">↗</span>
+                </button>
+              </div>
+            </form>
+            <p class="privacy-note"><span aria-hidden="true">✳</span> Fictional demo. No contact or payment details needed.</p>
+          </section>
+
+          <aside class="agent-panel" aria-labelledby="agent-title">
+            <div class="agent-heading">
+              <div>
+                <p class="eyebrow">LIVE SYSTEM VIEW</p>
+                <h2 id="agent-title">Agent view</h2>
+              </div>
+            </div>
+            <div class="stage-row">
+              <span class="field-label">CURRENT STAGE</span>
+              <span class="stage-badge" id="stage-badge">Opener</span>
+            </div>
+            <div class="score-block">
+              <div class="score-ring" id="score-ring" style="--score-angle: 0deg" role="img" aria-label="Lead score 0 out of 100">
+                <div><strong id="score-value">0</strong><span> / 100</span></div>
+              </div>
+              <div class="score-copy">
+                <span class="field-label">LEAD SCORE</span>
+                <p id="score-reason">The conversation has just started.</p>
+              </div>
+            </div>
+            <div class="lead-data">
+              <div class="lead-data-heading"><span class="field-label">EXTRACTED LEAD</span><span>UPDATES LIVE</span></div>
+              <dl class="lead-fields">
+                <div><dt>Running level</dt><dd data-field="level">Not shared yet</dd></div>
+                <div><dt>Goal</dt><dd data-field="goal">Not shared yet</dd></div>
+                <div><dt>Deadline</dt><dd data-field="deadline">Not shared yet</dd></div>
+                <div><dt>Past blocker</dt><dd data-field="blocker">Not shared yet</dd></div>
+                <div><dt>Weekly time</dt><dd data-field="timePerWeek">Not shared yet</dd></div>
+                <div><dt>Ready to invest</dt><dd data-field="readiness">Not shared yet</dd></div>
+              </dl>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="how-section" id="how-it-works" aria-labelledby="how-title">
+        <div class="how-title-block">
+          <p class="eyebrow">BEHIND THE CHAT</p>
+          <h2 id="how-title">How it<br><em>works.</em></h2>
+          <p>A small, transparent agent loop. No hidden CRM or stored lead profile.</p>
+        </div>
+        <div class="how-steps">
+          <article>
+            <span class="step-number">01</span>
+            <div><h3>Open &amp; qualify</h3><p>Mila starts from the commented post. The agent learns about running level, goal, deadline, blocker, weekly time, and readiness through a natural back-and-forth.</p></div>
+          </article>
+          <article>
+            <span class="step-number">02</span>
+            <div><h3>Handle &amp; decide</h3><p>It responds to price, time, or hesitation without pressure. A ready, qualified lead gets two real-looking demo slots. Someone not ready gets a free run-week planner.</p></div>
+          </article>
+          <article>
+            <span class="step-number">03</span>
+            <div><h3>Structure &amp; protect</h3><p>Every model turn requests JSON. The app validates fields and stage transitions, rejects unsupported bookings, redacts contact-like data, and falls back safely if output is invalid.</p></div>
+          </article>
+        </div>
+        <div class="how-stamp"><span>NO DATABASE</span><span>NO CONTACT DETAILS</span><span>FICTIONAL COACH</span></div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="wordmark" href="#top"><span class="wordmark-mark" aria-hidden="true">S</span><span>Setter Sandbox</span></a>
+      <span>Built as a portfolio demo. Mila, her offer, and these call slots are fictional.</span>
+      <a href="#top">BACK TO TOP ↑</a>
+    </footer>
+  </body>
+</html>
